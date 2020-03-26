@@ -40,6 +40,7 @@ public class ControlPanel extends JPanel {
 
         frame.canvas.graphics.setColor(Color.WHITE);
         frame.canvas.graphics.fillRect(0, 0, DrawingPanel.W, DrawingPanel.H);
+        frame.canvas.repaint();
 
     }
 
@@ -47,6 +48,7 @@ public class ControlPanel extends JPanel {
         try {
             frame.canvas.image = ImageIO.read(new File("F:/test.png"));
             frame.canvas.graphics = frame.canvas.image.createGraphics();
+            frame.canvas.repaint();
         } catch (IOException e) {
             System.err.println(e);
         }
