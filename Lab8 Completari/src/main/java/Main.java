@@ -1,4 +1,3 @@
-import com.github.javafaker.Faker;
 import vlad.ArtistDAO.*;
 import vlad.AlbumDao.*;
 import vlad.dbConnection.*;

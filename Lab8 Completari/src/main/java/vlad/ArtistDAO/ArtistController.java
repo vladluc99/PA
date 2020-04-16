@@ -15,6 +15,7 @@ public class ArtistController {
         pstmt.setString(1, name);
         pstmt.setString(2, country);
         pstmt.executeUpdate();
+        pstmt.close();
     }
 
     public List<Artist> findByName(String name) throws SQLException, ClassNotFoundException { //deoarece campul nume nu este unic, pot exista duplicate, de aceea am pus lista
@@ -27,6 +28,8 @@ public class ArtistController {
         while (rs.next()) {
             artistsList.add(new Artist(rs.getInt("id"), rs.getString("name"), rs.getString("country")));
         }
+        rs.close();
+        pstmt.close();
         return artistsList;
     }
 

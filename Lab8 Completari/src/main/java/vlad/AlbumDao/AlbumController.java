@@ -26,6 +26,7 @@ public class AlbumController {
         while(rs.next()){
             albumsList.add(new Album(rs.getInt("id"),rs.getString("name"),rs.getInt("artist_id"),rs.getInt("release_year")));
         }
+        rs.close();
         pstmt.close();
         return albumsList;
     }
